@@ -10,43 +10,48 @@ interface Project {
   description: string;
   tags: string;
   href: string;
-  col1Images: [string, string];
-  col2Image: string;
+  image: string;
 }
 
 const PROJECTS: Project[] = [
   {
     number: '01',
-    name: 'Heeding Climate Solutions',
-    category: 'Client · Climate-Tech',
+    name: 'Plateron — Restaurant Dashboard',
+    category: 'Case Study · Web App UI/UX',
     description:
-      'A digital ecosystem for sustainable fuels, marketplace discovery, supply-chain visibility, and CO₂ reduction.',
-    tags: 'Product Design · UX/UI · Climate-Tech · Marketplace · Supply Chain',
-    href: '#',
-    col1Images: ['/images/projects/heeding-1.webp', '/images/projects/heeding-2.webp'],
-    col2Image: '/images/projects/heeding-3.webp',
+      'A restaurant management dashboard unifying orders, menus, revenue and customer analytics into one simple, real-time view.',
+    tags: 'UI/UX · Dashboard Design · Web App · Restaurant Tech',
+    href: 'https://www.behance.net/gallery/143933313/Plateron-Restaurant-Dashboard/modules/813133073',
+    image: '/images/projects/plateron.jpg',
   },
   {
     number: '02',
-    name: 'Lock.AI',
-    category: 'Product · AI',
-    description:
-      'An offline-first AI product concept focused on privacy, local intelligence, and accessible AI experiences where cloud connectivity cannot always be assumed.',
-    tags: 'Product Design · AI · UX/UI · Offline AI · Product Strategy',
-    href: '#',
-    col1Images: ['/images/projects/lockai-1.webp', '/images/projects/lockai-2.webp'],
-    col2Image: '/images/projects/lockai-3.webp',
+    name: 'Hapyyworkin',
+    category: 'Case Study · UI/UX',
+    description: 'A digital product case study — full details on Behance.',
+    tags: 'UI/UX · Product Design',
+    href: 'https://www.behance.net/gallery/142923031/Hapyyworkin',
+    image: '/images/projects/happyworkin.jpg',
   },
   {
     number: '03',
-    name: 'Freight Matrix',
-    category: 'Product · Supply Chain',
+    name: 'Reporting Tool',
+    category: 'Case Study · Web App UI/UX',
     description:
-      'A real-time freight analysis and price comparison experience designed to simplify complex logistics decisions and make transportation data easier to understand.',
-    tags: 'Product Design · Data · Supply Chain · UX/UI · Analytics',
-    href: '#',
-    col1Images: ['/images/projects/freight-1.webp', '/images/projects/freight-2.webp'],
-    col2Image: '/images/projects/freight-3.webp',
+      'A contact center analytics dashboard turning call data into real-time insight — call volume trends, agent performance and call distribution reporting.',
+    tags: 'UI/UX · Analytics Dashboard · Data Visualization · Enterprise',
+    href: 'https://www.behance.net/gallery/200417231/Reporting-Tool',
+    image: '/images/projects/reporting-tool.jpg',
+  },
+  {
+    number: '04',
+    name: 'Insurance Website',
+    category: 'Case Study · Web Platform UI/UX',
+    description:
+      'A digital insurance platform for car, bike, travel and health plans — quote generation, renewals and claims made simple end-to-end.',
+    tags: 'UI/UX · Insurance Tech · Web Platform · Conversion Design',
+    href: 'https://www.behance.net/gallery/200418105/Insurance-Website/modules/1136150287',
+    image: '/images/projects/insurance-website.jpg',
   },
 ];
 
@@ -65,9 +70,6 @@ function ProjectCard({
   const scale = useTransform(progress, [index / total, 1], [1, targetScale]);
 
   return (
-    // The sticky element itself is the h-[85vh] flow block, a direct child of the
-    // cards container — so each card pins at top-24/32 until the container ends,
-    // letting later cards stack over it.
     <div className="sticky top-24 md:top-32 h-[85vh]">
       <motion.div
           className="relative rounded-[40px] sm:rounded-[50px] md:rounded-[60px] border-2 border-[#D7E2EA] p-4 sm:p-6 md:p-8"
@@ -119,37 +121,18 @@ function ProjectCard({
               </div>
             </div>
             <div className="flex-shrink-0 px-1 pb-1">
-              <ProjectButton href={project.href} />
+              <ProjectButton href={project.href} label="View Case Study" />
             </div>
           </div>
 
-          {/* Image grid */}
-          <div className="flex gap-3 sm:gap-4">
-            <div className="w-[40%] flex flex-col gap-3 sm:gap-4">
-              <img
-                src={project.col1Images[0]}
-                alt={`${project.name} visual 1`}
-                loading="lazy"
-                className="w-full object-cover rounded-[40px] sm:rounded-[50px] md:rounded-[60px]"
-                style={{ height: 'clamp(130px, 16vw, 230px)' }}
-              />
-              <img
-                src={project.col1Images[1]}
-                alt={`${project.name} visual 2`}
-                loading="lazy"
-                className="w-full object-cover rounded-[40px] sm:rounded-[50px] md:rounded-[60px]"
-                style={{ height: 'clamp(160px, 22vw, 340px)' }}
-              />
-            </div>
-            <div className="w-[60%]">
-              <img
-                src={project.col2Image}
-                alt={`${project.name} visual 3`}
-                loading="lazy"
-                className="w-full h-full object-cover rounded-[40px] sm:rounded-[50px] md:rounded-[60px]"
-              />
-            </div>
-          </div>
+          {/* Visual — real case study cover */}
+          <img
+            src={project.image}
+            alt={`${project.name} case study cover`}
+            loading="lazy"
+            className="w-full object-cover rounded-[40px] sm:rounded-[50px] md:rounded-[60px]"
+            style={{ height: 'clamp(160px, 20vw, 280px)' }}
+          />
       </motion.div>
     </div>
   );
@@ -165,7 +148,7 @@ export default function ProjectsSection() {
   return (
     <section
       id="projects"
-      className="relative z-10 rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] -mt-10 sm:-mt-12 md:-mt-14 px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32"
+      className="relative px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32"
       style={{ backgroundColor: '#0C0C0C' }}
     >
       <FadeIn delay={0} y={40}>

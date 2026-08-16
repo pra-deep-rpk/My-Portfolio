@@ -3,40 +3,40 @@ import FadeIn from '../components/FadeIn';
 const SERVICES = [
   {
     number: '01',
-    name: 'Product Design',
+    name: 'UI/UX Engineering',
     description:
-      'Designing digital products from early concepts to polished interfaces, balancing user needs, business goals, and visual quality.',
+      'Designing intuitive interfaces and translating user experience concepts into production-ready applications.',
   },
   {
     number: '02',
-    name: 'UX/UI Design',
+    name: 'Frontend Engineering',
     description:
-      'Creating intuitive user journeys, wireframes, design systems, responsive interfaces, and high-fidelity digital experiences.',
+      'Building scalable and maintainable applications using React and Angular with modern component-based architectures.',
   },
   {
     number: '03',
-    name: 'AI & Digital Products',
+    name: 'Full-Stack Development',
     description:
-      'Designing experiences around AI-powered products, intelligent workflows, automation, and emerging technologies.',
+      'Developing end-to-end applications using frontend technologies, Node.js, APIs, MySQL, ORM and structured data architectures.',
   },
   {
     number: '04',
-    name: 'Interactive Web Experiences',
+    name: 'Generative AI',
     description:
-      'Creating immersive websites that combine strong visual direction, motion, storytelling, interaction, and modern technology.',
+      'Designing LLM-powered applications that combine retrieval, reasoning, orchestration and intelligent workflows.',
   },
   {
     number: '05',
-    name: 'Product Marketing & Strategy',
+    name: 'AI Agents',
     description:
-      'Connecting product design with positioning, user needs, market understanding, marketing, and business objectives.',
+      'Building multi-agent systems capable of coordinating specialized agents and interacting with external tools.',
   },
 ];
 
 export default function ServicesSection() {
   return (
     <section
-      id="services"
+      id="expertise"
       className="relative rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32"
       style={{ backgroundColor: '#FFFFFF' }}
     >
@@ -45,7 +45,7 @@ export default function ServicesSection() {
           className="font-black uppercase leading-none tracking-tight text-center mb-16 sm:mb-20 md:mb-28"
           style={{ color: '#0C0C0C', fontSize: 'clamp(3rem, 12vw, 160px)' }}
         >
-          Services
+          What I Build
         </h2>
       </FadeIn>
 

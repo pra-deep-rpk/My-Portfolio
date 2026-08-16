@@ -12,13 +12,13 @@ export default function FooterSection() {
         className="font-black uppercase tracking-wider text-lg md:text-xl"
         style={{ color: '#D7E2EA' }}
       >
-        Gireesh
+        Pradeep
       </span>
       <span
         className="font-light uppercase tracking-widest text-center text-[0.65rem] md:text-xs"
         style={{ color: '#D7E2EA', opacity: 0.55 }}
       >
-        Product Design &middot; UX/UI &middot; AI &middot; Digital Experiences
+        Full-Stack Engineering &middot; Generative AI &middot; UI/UX
       </span>
       <button
         onClick={scrollToTop}

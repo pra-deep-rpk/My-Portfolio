@@ -1,32 +1,17 @@
 import { useEffect, useRef } from 'react';
 
-// Served from public/images/ — see docs/ASSETS.md.
-// Order is significant: the first 11 form row 1, the rest form row 2.
+// Case-study covers from Behance — see docs/ASSETS.md.
 const MARQUEE_IMAGES = [
-  '/images/marquee/01-space-voyage.webp',
-  '/images/marquee/02-codenest.webp',
-  '/images/marquee/03-vex-ventures.webp',
-  '/images/marquee/04-stellar-ai-v2.webp',
-  '/images/marquee/05-asme.webp',
-  '/images/marquee/06-transform-data.webp',
-  '/images/marquee/07-vitara.webp',
-  '/images/marquee/08-terra.webp',
-  '/images/marquee/09-skyelite.webp',
-  '/images/marquee/10-aethera.webp',
-  '/images/marquee/11-designpro.webp',
-  '/images/marquee/12-stellar-ai.webp',
-  '/images/marquee/13-xportfolio.webp',
-  '/images/marquee/14-orbit-web3.webp',
-  '/images/marquee/15-nexora.webp',
-  '/images/marquee/16-evr-ventures.webp',
-  '/images/marquee/17-planet-orbit.webp',
-  '/images/marquee/18-new-era.webp',
-  '/images/marquee/19-wealth.webp',
-  '/images/marquee/20-luminex.webp',
+  '/images/marquee/plateron.jpg',
+  '/images/marquee/reporting-tool.jpg',
+  '/images/marquee/insurance-website.jpg',
+  '/images/marquee/kotak-prime.jpg',
+  '/images/marquee/melofy.jpg',
+  '/images/marquee/song-mastery.jpg',
 ];
 
-const ROW_1 = MARQUEE_IMAGES.slice(0, 11);
-const ROW_2 = MARQUEE_IMAGES.slice(11);
+const ROW_1 = MARQUEE_IMAGES.slice(0, 3);
+const ROW_2 = MARQUEE_IMAGES.slice(3);
 
 function MarqueeRow({
   images,
@@ -82,10 +67,17 @@ export default function MarqueeSection() {
 
   return (
     <section
+      id="tech-stack"
       ref={sectionRef}
-      className="pt-24 sm:pt-32 md:pt-40 pb-10 flex flex-col gap-3"
+      className="px-5 sm:px-8 md:px-10 pt-20 sm:pt-24 md:pt-28 pb-10 flex flex-col gap-3"
       style={{ backgroundColor: '#0C0C0C' }}
     >
+      <h2
+        className="hero-heading font-black uppercase leading-none tracking-tight text-center mb-10 sm:mb-14"
+        style={{ fontSize: 'clamp(2rem, 6.5vw, 84px)' }}
+      >
+        Technical Stack
+      </h2>
       <MarqueeRow images={ROW_1} rowRef={row1Ref} />
       <MarqueeRow images={ROW_2} rowRef={row2Ref} />
     </section>

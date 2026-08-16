@@ -5,10 +5,11 @@ import ContactButton from '../components/ContactButton';
 const DECOR_BASE = '/images/decor';
 
 const ABOUT_PARAGRAPHS = [
-  'I’m Gireesh, a Product Designer and Product Marketing & UX Consultant focused on creating digital products that are useful, intuitive, visually strong, and aligned with real business goals.',
-  'My work sits at the intersection of product design, UX/UI, technology, AI, marketing, and business. I enjoy turning complex ideas into simple and engaging digital experiences — from early product concepts and UX systems to polished interfaces and interactive websites.',
-  'I’ve worked across climate-tech, AI, supply chain, digital products, marketing, and interactive web experiences, combining design thinking with technology, data, and automation.',
-  'Let’s build something incredible together.',
+  'With 8 years of experience in software engineering, my journey has evolved across multiple layers of technology — from designing user experiences and developing web applications to building scalable frontend and backend systems.',
+  'My technical journey includes UI/UX Design, React, Node.js, Angular 14–20, MySQL, ORM, JSON-based architectures, and modern web application development.',
+  'Over the past year, I have been specializing in Generative AI and AI Engineering, exploring how Large Language Models can be integrated into real-world applications.',
+  'My current work focuses on building systems around Hybrid RAG, LLM Orchestration, Research Recommendation Systems, and Agentic AI with Multi-Agent architectures and tool calling.',
+  'I enjoy working at the intersection of product experience, software engineering, and artificial intelligence — turning complex ideas into practical, scalable systems.',
 ];
 
 export default function AboutSection() {
@@ -62,9 +63,11 @@ export default function AboutSection() {
           <FadeIn delay={0} y={40}>
             <h2
               className="hero-heading font-black uppercase leading-none tracking-tight text-center"
-              style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}
+              style={{ fontSize: 'clamp(2.6rem, 10vw, 130px)' }}
             >
-              About Me
+              Engineering Experiences.
+              <br />
+              Building Intelligence.
             </h2>
           </FadeIn>
 

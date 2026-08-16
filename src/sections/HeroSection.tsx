@@ -1,47 +1,21 @@
 import FadeIn from '../components/FadeIn';
-import Magnet from '../components/Magnet';
+import SkillOrbit from '../components/SkillOrbit';
 import ContactButton from '../components/ContactButton';
+import ProjectButton from '../components/ProjectButton';
 
-const NAV_LINKS = [
-  { label: 'About', href: '#about' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Services', href: '#services' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Contact', href: '#contact' },
-];
-
-const PORTRAIT_URL = '/images/hero/portrait.webp';
+const PORTRAIT_URL = '/images/hero/portrait.png';
 
 export default function HeroSection() {
   return (
     <section
-      className="relative h-screen flex flex-col"
+      className="relative flex-1 flex flex-col"
       style={{ overflowX: 'clip', backgroundColor: '#0C0C0C' }}
     >
-      {/* Navbar */}
-      <FadeIn as="nav" delay={0} y={-20} className="relative z-20">
-        <div className="flex justify-between items-center px-6 md:px-10 pt-6 md:pt-8">
-          {NAV_LINKS.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] hover:opacity-70 transition-opacity duration-200"
-              style={{ color: '#D7E2EA' }}
-            >
-              {link.label}
-            </a>
-          ))}
-        </div>
-      </FadeIn>
-
       {/* Hero heading */}
       <div className="overflow-hidden">
         <FadeIn delay={0.15} y={40}>
-          {/* vw sizes scaled from the original 14/15/16/17.5vw by the measured width
-              ratio of "Hi, i'm jack" vs "Hi, i'm Gireesh" so the heading fills the
-              viewport exactly like the original composition. */}
-          <h1 className="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full text-center text-[10.91vw] sm:text-[11.69vw] md:text-[12.47vw] lg:text-[13.64vw] mt-6 sm:mt-4 md:-mt-5">
-            Hi, i&apos;m Gireesh
+          <h1 className="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full text-center text-[10.91vw] sm:text-[11.69vw] md:text-[12.47vw] lg:text-[13.64vw] mt-14 sm:mt-16 md:mt-20">
+            Hi, i&apos;m Pradeep
           </h1>
         </FadeIn>
       </div>
@@ -50,36 +24,41 @@ export default function HeroSection() {
       <div className="mt-auto relative z-20 flex justify-between items-end px-6 md:px-10 pb-7 sm:pb-8 md:pb-10">
         <FadeIn delay={0.35} y={20}>
           <p
-            className="font-light uppercase tracking-wide leading-snug max-w-[160px] sm:max-w-[220px] md:max-w-[260px]"
+            className="font-light uppercase tracking-wide leading-snug max-w-[160px] sm:max-w-[240px] md:max-w-[300px]"
             style={{ color: '#D7E2EA', fontSize: 'clamp(0.75rem, 1.4vw, 1.5rem)' }}
           >
-            A product designer driven by crafting meaningful digital products, interfaces, and
-            unforgettable digital experiences.
+            Senior Software Engineer building scalable digital experiences and intelligent AI systems.
           </p>
         </FadeIn>
-        <FadeIn delay={0.5} y={20}>
-          <ContactButton />
+        <FadeIn delay={0.5} y={20} className="flex flex-col items-end gap-3 sm:gap-4">
+          <ContactButton label="Let&rsquo;s Connect" href="#contact" />
+          <ProjectButton label="Explore My Work" href="#projects" />
         </FadeIn>
       </div>
 
       {/* Hero portrait */}
-      <div className="absolute left-1/2 -translate-x-1/2 z-10 top-1/2 -translate-y-1/2 sm:top-auto sm:translate-y-0 sm:bottom-0 w-[280px] sm:w-[360px] md:w-[440px] lg:w-[520px]">
+      <div className="absolute left-1/2 -translate-x-1/2 z-10 top-[40%] -translate-y-1/2 sm:top-auto sm:translate-y-0 sm:bottom-0 w-[340px] sm:w-[380px] md:w-[520px] lg:w-[720px] xl:w-[820px]">
         <FadeIn delay={0.6} y={30}>
-          <Magnet
-            padding={150}
-            strength={3}
-            activeTransition="transform 0.3s ease-out"
-            inactiveTransition="transform 0.6s ease-in-out"
-          >
+          <SkillOrbit>
             <img
               src={PORTRAIT_URL}
-              alt="Portrait of Gireesh"
-              className="w-full h-auto select-none pointer-events-none"
+              alt="Portrait of Pradeep"
+              className="w-full h-auto select-none pointer-events-none grayscale"
               draggable={false}
             />
-          </Magnet>
+          </SkillOrbit>
         </FadeIn>
       </div>
+
+      {/* Bottom gradient for depth */}
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-0"
+        style={{
+          height: '38%',
+          background:
+            'linear-gradient(to bottom, rgba(12,12,12,0) 0%, rgba(12,12,12,0.75) 65%, #0C0C0C 100%)',
+        }}
+      />
     </section>
   );
 }

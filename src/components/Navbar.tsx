@@ -15,6 +15,7 @@ export default function Navbar() {
       as="nav"
       delay={0}
       y={-20}
+      scrollTriggered={false}
       className="sticky top-0 z-30 backdrop-blur-md"
       style={{ backgroundColor: 'rgba(12, 12, 12, 0.55)' }}
     >

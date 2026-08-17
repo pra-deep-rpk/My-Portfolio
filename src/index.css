@@ -28,3 +28,36 @@ body {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/*
+ * Pure-CSS reveal for above-the-fold hero content. Framer Motion's
+ * mount-triggered `animate` prop can silently fail to apply on a genuinely
+ * fresh mount with no follow-up render (observed on production builds).
+ * CSS animations are driven by the rendering engine itself, not JS
+ * scheduling, so this is used for the hero instead — critical first-paint
+ * content should never depend on a JS timing race to become visible.
+ */
+@keyframes hero-reveal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, var(--reveal-y, 20px), 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.hero-reveal {
+  opacity: 0;
+  animation: hero-reveal 0.7s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+  animation-delay: var(--reveal-delay, 0s);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-reveal {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

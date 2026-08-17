@@ -16,7 +16,7 @@ import ScrollToTopButton from './components/ScrollToTopButton';
 export default function App() {
   return (
     <div style={{ backgroundColor: '#0C0C0C', overflowX: 'clip' }}>
-      <div className="min-h-screen flex flex-col">
+      <div className="min-h-dvh flex flex-col">
         <Navbar />
         <HeroSection />
       </div>
